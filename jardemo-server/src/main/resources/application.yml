@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: jardemo
+    username: jardemo
+    url: jdbc:h2:mem:jardemo;DB_CLOSE_DELAY=-1
+  liquibase:
+    change-log: classpath:liquibase/master.xml
+logging:
+  level:
+    org.springframework.orm.jpa: trace

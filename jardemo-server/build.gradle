@@ -1,0 +1,7 @@
+apply plugin: 'org.springframework.boot'
+
+dependencies {
+    api project(':jardemo-core')
+    api group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    runtime group: 'com.h2database', name: 'h2'
+}

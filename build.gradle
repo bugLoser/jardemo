@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE'
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.8.RELEASE"
+    }
+}
+
+allprojects {
+    group 'per.bugloser'
+    version '1.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'io.spring.dependency-management'
+    apply plugin: 'java-library'
+
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom 'io.spring.platform:platform-bom:Cairo-SR7'
+        }
+    }
+
+    dependencies{
+        testImplementation group: 'org.springframework.boot', name: 'spring-boot-starter-test'
+    }
+}
+
+
+
+

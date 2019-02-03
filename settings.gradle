@@ -1,0 +1,4 @@
+rootProject.name = 'jardemo'
+include 'jardemo-core'
+include 'jardemo-server'
+
